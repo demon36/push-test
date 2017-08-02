@@ -20,19 +20,21 @@ var userSchema = new mongoose.Schema({
 var user = mongoose.model('user', userSchema);
 
 module.exports = {
+
+	//check regId exists
 	regIdExists : function(regId, callback){
 		user.findOne({regId : regId}, function (err, foundUser) {
 			callback(foundUser);
 		});
 	},
 
-	//continue here
 	insertRegId : function(regId){
 		var newUser = new user({regId : regId});
 		newUser.save();
 		return newUser._id;
 	},
 
+	//select all users
 	selectUsers : function(callback){
 		user.find({}, function(err, foundUsers){
 			callback(foundUsers);
