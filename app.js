@@ -9,7 +9,9 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 var services = require('./services');
+var testUnit = require('./testUnit');
 
+testUnit.testDb();
 var app = express();
 
 // view engine setup

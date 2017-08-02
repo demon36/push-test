@@ -28,16 +28,16 @@ module.exports = {
 		});
 	},
 
-	insertRegId : function(regId){
+	insertRegId : function(regId, callback){
 		var newUser = new user({regId : regId});
-		newUser.save();
-		return newUser._id;
+		newUser.save(function(err){
+			callback(newUser);
+		});
 	},
 
-	//select all users
-	selectUsers : function(callback){
-		user.find({}, function(err, foundUsers){
-			callback(foundUsers);
+	removeUser : function(regId){
+		user.remove({regId : regId}, function (err) {
+			console.log(err);
 		});
 	},
 

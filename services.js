@@ -1,6 +1,5 @@
 var db = require('./db');
 var gcm = require('node-gcm');
-const assert = require('assert');
 
 var sender = new gcm.Sender('AIzaSyAcDkr8-aXdZGWzEk2BRCW5ujwjXzEojFw');
 
