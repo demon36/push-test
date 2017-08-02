@@ -11,7 +11,9 @@ var users = require('./routes/users');
 var services = require('./services');
 var testUnit = require('./testUnit');
 
-testUnit.testDb();
+// testUnit.testDb();
+// testUnit.testApi();
+
 var app = express();
 
 // view engine setup

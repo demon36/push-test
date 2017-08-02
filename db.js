@@ -35,9 +35,11 @@ module.exports = {
 		});
 	},
 
-	removeUser : function(regId){
+	removeUser : function(regId, callback){
 		user.remove({regId : regId}, function (err) {
-			console.log(err);
+			if(err)
+				console.log(err);
+			callback();
 		});
 	},
 

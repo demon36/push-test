@@ -24,8 +24,10 @@ module.exports = {
 		    	//register id only if it is not already there
 		    	db.regIdExists(regId, function(foundUser){
 					if(!foundUser){
-						db.insertRegId(regId);
-						callback("success");
+						db.insertRegId(regId, function(){
+							callback("success");
+						});
+						
 					}else{
 						callback("failure, registration ID already exists");
 					}
